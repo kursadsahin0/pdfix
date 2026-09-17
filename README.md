@@ -107,6 +107,18 @@ android/               # Capacitor Android project
 ios/                   # Capacitor iOS project
 ```
 
+## Deploy (Netlify)
+
+Use these settings (or rely on `netlify.toml`):
+
+| Setting | Value |
+| --- | --- |
+| **Build command** | `npm run build` |
+| **Publish directory** | `dist/spa` ← not `dist`, not project root |
+| **Node version** | `22` |
+
+If the page is blank, the publish directory is almost always wrong (`dist` instead of `dist/spa`), so JS/CSS 404 olur.
+
 ## Deploy (Vercel)
 
 1. **Root Directory:** leave empty (project root) — must **not** be `pdf`

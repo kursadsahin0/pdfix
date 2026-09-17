@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist/spa"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA fallback (safe even with hash router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
