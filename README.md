@@ -107,7 +107,11 @@ android/               # Capacitor Android project
 ios/                   # Capacitor iOS project
 ```
 
-## License
+## Deploy (Vercel)
 
-Private / unpublished unless otherwise specified.
+- **Root Directory:** project root (not a subfolder)
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist/spa`
+
+`vercel.json` is already configured for this. Redeploy after pulling these changes.
 # deneme
