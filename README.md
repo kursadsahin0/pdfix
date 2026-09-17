@@ -109,9 +109,10 @@ ios/                   # Capacitor iOS project
 
 ## Deploy (Vercel)
 
-- **Root Directory:** project root (not a subfolder)
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist/spa`
+1. **Root Directory:** leave empty (project root) — must **not** be `pdf`
+2. **Build Command:** `npm run build` (or use `vercel.json`)
+3. **Output Directory:** `dist/spa`
+4. **Install Command:** `npm install`
 
-`vercel.json` is already configured for this. Redeploy after pulling these changes.
+`vercel.json` is configured for this. After changing settings, trigger a new deployment from the latest `main` commit.
 # deneme

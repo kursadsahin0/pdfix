@@ -30,6 +30,9 @@ node_modules
 *.xcworkspace/xcuserdata
 *.xcodeproj/xcuserdata
 
+# Legacy Capacitor starter (do not redeploy)
+/pdf
+
 # Log files
 npm-debug.log*
 yarn-debug.log*
