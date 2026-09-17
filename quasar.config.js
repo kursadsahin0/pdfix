@@ -2,6 +2,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
 import { defineConfig } from '#q-app'
+import autoprefixer from 'autoprefixer'
 
 export default defineConfig((/* ctx */) => {
   return {
@@ -49,7 +50,17 @@ export default defineConfig((/* ctx */) => {
       // minify: false,
       // distDir
 
-      // extendViteConf (viteConf) {},
+      extendViteConf(viteConf) {
+        // Inline PostCSS so Vercel never has to resolve a root postcss.config.js
+        viteConf.css = viteConf.css || {}
+        viteConf.css.postcss = {
+          plugins: [
+            autoprefixer({
+              overrideBrowserslist: ['baseline widely available'],
+            }),
+          ],
+        }
+      },
       // viteVuePluginOptions: {},
 
       // to write components with JSX/TSX:
