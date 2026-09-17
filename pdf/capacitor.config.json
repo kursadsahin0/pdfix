@@ -1,0 +1,10 @@
+{
+  "appId": "com.pdfduzenleyici.app",
+  "appName": "pdfduzenleyici",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

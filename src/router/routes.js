@@ -1,15 +1,13 @@
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('@/pages/IndexPage.vue') },
-      { path: 'second', component: () => import('@/pages/SecondPage.vue') },
-    ],
+    component: () => import('@/layouts/AppLayout.vue'),
+    children: [{ path: '', component: () => import('@/pages/HomePage.vue') }],
   },
-
-  // Always leave this as last one,
-  // but you can also remove it
+  {
+    path: '/editor',
+    component: () => import('@/pages/EditorPage.vue'),
+  },
   {
     path: '/:catchAll(.*)*',
     component: () => import('@/pages/ErrorNotFound.vue'),

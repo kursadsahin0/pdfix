@@ -1,0 +1,70 @@
+:root {
+  --pe-bg: #f4f6f8;
+  --pe-surface: #ffffff;
+  --pe-border: #e2e6eb;
+  --pe-text: #1a2332;
+  --pe-text-muted: #6b7785;
+  --pe-accent: #2563eb;
+  --pe-accent-hover: #1d4ed8;
+  --pe-accent-soft: #eff4ff;
+  --pe-workspace-bg: #e8ecf1;
+  --pe-sidebar-width: 200px;
+  --pe-toolbar-height: 56px;
+  --pe-bottombar-height: 48px;
+  --pe-mobile-tools-height: 64px;
+  --pe-radius: 12px;
+  --pe-shadow: 0 1px 3px rgba(26, 35, 50, 0.08), 0 4px 16px rgba(26, 35, 50, 0.04);
+  --pe-safe-top: env(safe-area-inset-top, 0px);
+  --pe-safe-right: env(safe-area-inset-right, 0px);
+  --pe-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --pe-safe-left: env(safe-area-inset-left, 0px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#q-app {
+  height: 100%;
+  margin: 0;
+  background: var(--pe-bg);
+  color: var(--pe-text);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* Improve touch dragging on mobile editor surfaces without breaking desktop */
+@media (pointer: coarse) {
+  .editor-workspace,
+  .editor-overlay,
+  .page-sidebar__list {
+    touch-action: pan-x pan-y;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  :root {
+    --pe-sidebar-width: 168px;
+  }
+}
+
+@media (max-width: 599px) {
+  :root {
+    --pe-toolbar-height: 52px;
+    --pe-bottombar-height: 44px;
+    --pe-mobile-tools-height: 60px;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "appId": "com.pdfduzenleyici.app",
+  "appName": "PDFix",
+  "webDir": "dist/spa",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true
+    }
+  }
+}
