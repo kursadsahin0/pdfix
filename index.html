@@ -17,8 +17,81 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
     <link rel="shortcut icon" href="favicon.ico" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #f4f6f8;
+      }
+
+      .pdfix-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        background:
+          radial-gradient(ellipse at top, #e8f0fe 0%, transparent 55%),
+          linear-gradient(180deg, #f8fafc 0%, #f4f6f8 100%);
+        transition:
+          opacity 0.35s ease,
+          visibility 0.35s ease;
+      }
+
+      .pdfix-splash--hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .pdfix-splash__mark {
+        width: 88px;
+        height: 88px;
+        border-radius: 22px;
+        box-shadow: 0 8px 28px rgba(37, 99, 235, 0.28);
+        animation: pdfix-splash-pulse 1.4s ease-in-out infinite;
+      }
+
+      .pdfix-splash__title {
+        margin: 0;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #1a2332;
+      }
+
+      .pdfix-splash__subtitle {
+        margin: 0;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #6b7785;
+      }
+
+      @keyframes pdfix-splash-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.04);
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="pdfix-splash" class="pdfix-splash" aria-busy="true" aria-label="Loading PDFix">
+      <img class="pdfix-splash__mark" src="favicon.svg" width="88" height="88" alt="" />
+      <p class="pdfix-splash__title">PDFix</p>
+      <p class="pdfix-splash__subtitle">Loading…</p>
+    </div>
+
     <!-- quasar:entry-point -->
   </body>
 </html>
